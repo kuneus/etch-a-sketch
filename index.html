@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ut8">
+        <title>Etch-a-Sketch</title>
+        <link rel="stylesheet" href="eas.css">
+    </head>
+    <body>
+        <div class="header">
+            Etch-a-Sketch
+        </div>
+        <div id="grid">
+        </div>
+
+    </body>
+    <script>
+        const grid = document.querySelector('#grid')
+
+
+        for (let i=1; i<= 400; i++) {
+            const divBox = document.createElement("div")
+            divBox.classList.add('divBox');
+            grid.appendChild(divBox);
+            }
+        
+        grid.addEventListener('mouseover', function(e) {
+            if (e.target.matches('.divBox')) {
+                e.target.classList.add('active');
+            }
+        });
+        
+        //pseudocode
+        //need function to create grid with cells
+        //need function to reset grid
+        //need button to reset grid using reset function
+        //need function to change color of grid
+        //need button to change color of grid using color change function
+        //need function to change size of grid
+        //need button to change size of grid using Javascript
+
+    </script>
+</html>
