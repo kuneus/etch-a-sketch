@@ -18,7 +18,7 @@
                 </div>
                 <div class="colorControl">
                     <p>Change color</p>
-                    <input id="colorPicker" type="color" value="#333333"/>
+                    <input id="colorPicker" type="color" value="#e7581a"/>
                 </div>
                 <button id="resetBtn">Reset</button>
             </div>
@@ -85,6 +85,7 @@
         document.body.onmouseup = () => (mouseDown = false);
 
         function changeColor(e) {
+            if (e.type === 'mouseover' && !mouseDown) return;
             e.target.style.backgroundColor = currentColor;
         }
         
