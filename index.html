@@ -54,11 +54,14 @@
                 grid.appendChild(divBox);
                 grid.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
                 grid.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
+                divBox.addEventListener('mouseover', changeColor);
+                divBox.addEventListener('mousedown', changeColor);
                 }
             };
 
         createGrid(20);
 
+        colorPicker.oninput = (e) => setCurrentColor(e.target.value);
         slider.onchange = (e) => changeSize(e.target.value);
         slider.onmousemove = (e) => updateSizeValue(e.target.value);
 
@@ -77,8 +80,12 @@
             sizeValue.innerHTML = `${value} x ${value}`
         }
 
-        function changeColor() {
+        let mouseDown = false;
+        document.body.onmousedown = () => (mouseDown = true);
+        document.body.onmouseup = () => (mouseDown = false);
 
+        function changeColor(e) {
+            e.target.style.backgroundColor = currentColor;
         }
         
         function resetGrid() {
