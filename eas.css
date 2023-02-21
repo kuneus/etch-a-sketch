@@ -46,7 +46,6 @@ body {
     height: 600px;
     display: grid;
     border: solid 1px;
-    box-shadow: #e7581a 0px 3px 8px;
 }
 
 .divBox {
