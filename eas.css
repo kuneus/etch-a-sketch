@@ -103,3 +103,10 @@ input[type="range"]::-webkit-slider-thumb {
     flex-direction: column;
 }
 
+.footer {
+    color: white;
+    font-size: 15px;
+    bottom: 15px;
+    position: absolute;
+    left: 15px;
+}
