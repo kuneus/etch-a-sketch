@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="ut8">
+        <meta charset="UTF-8">
         <title>Etch-a-Sketch</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="eas.css">
     </head>
     <body>
@@ -12,12 +13,12 @@
         <div class="container">
             <div class="controls">
                 <div class="sizeControl">
-                    <p>Change size</p>
-                    <input type="range" min="4" max="64" value="20" id="slider">
+                    <p>Size</p>
+                    <input type="range" min="4" max="100" value="20" id="slider">
                     <div id="sizeValue">20 x 20</div>
                 </div>
                 <div class="colorControl">
-                    <p>Change color</p>
+                    <p>Color</p>
                     <input id="colorPicker" type="color" value="#e7581a"/>
                 </div>
                 <button id="resetBtn">Reset</button>
@@ -27,12 +28,14 @@
         </div>
     </body>
     <script>
+        //document elements
         const grid = document.querySelector('#grid');
         const restart = document.querySelector('#resetBtn');
         const colorPicker = document.getElementById('colorPicker');
         const slider = document.getElementById('slider');
         const sizeValue = document.getElementById('sizeValue');
 
+        //set default variables
         const defaultSize = 20;
         const defaultColor = '#e7581a';
         let currentSize = defaultSize;
@@ -59,6 +62,7 @@
                 }
             };
 
+        //set default grid size
         createGrid(20);
 
         colorPicker.oninput = (e) => setCurrentColor(e.target.value);
@@ -81,8 +85,8 @@
         }
 
         let mouseDown = false;
-        document.body.onmousedown = () => (mouseDown = true);
-        document.body.onmouseup = () => (mouseDown = false);
+            document.body.onmousedown = () => (mouseDown = true);
+            document.body.onmouseup = () => (mouseDown = false);
 
         function changeColor(e) {
             if (e.type === 'mouseover' && !mouseDown) return;

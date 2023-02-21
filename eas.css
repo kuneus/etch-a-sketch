@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-color: black;
     display: flex;
@@ -6,6 +11,7 @@ body {
     gap: 100px;
     font-family: eightBit;
 }
+
 
 @font-face {
     font-family: eightBit;
@@ -24,6 +30,7 @@ body {
 .container {
     color: white;
     display: flex;
+    gap: 50px;
 }
 
 .controls {
@@ -35,17 +42,11 @@ body {
 
 
 #grid {
-    width: 400px;
-    height: 400px;
-    /*justify-content: center;
-    align-items: center;
-    row-gap: 0px; 
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-auto-rows: minmax(0px, auto); */
+    width: 600px;
+    height: 600px;
     display: grid;
     border: solid 1px;
-    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    box-shadow: #e7581a 0px 3px 8px;
 }
 
 .divBox {
@@ -53,13 +54,53 @@ body {
 }
 
 #resetBtn {
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
+    background-color: white;
+    height: 30px;
+    border-radius: 10%;
+    font-family: 'eightBit';
 }
 
 #resetBtn:hover {
-    background-color: red;
+    background-color: #999999;
     transform: scale(1.2);
     cursor:pointer;
 }
+
+#colorPicker:hover {
+    border-color: blue;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#slider:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#slider, #colorPicker, #resetBtn {
+    width: 100px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+}
+   
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #e7581a;
+    margin: 0px;
+    border-radius: 0%;
+   }
+
+.sizeControl, .colorControl {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
